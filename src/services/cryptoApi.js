@@ -18,7 +18,8 @@ export const cryptoApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
         getCryptos: builder.query({ // getCryptos is the specific endpoint the data is coming from
-            query: () => createRequest("/coins")    // coins is the actual endpoint we are looking for
+            // @crucial @learning this is how we limit the number of hits. We pass count as a param, then see the limit
+            query: (count) => createRequest(`/coins?limit=${count}`)    // coins is the actual endpoint we are looking for
         })
     })
 });

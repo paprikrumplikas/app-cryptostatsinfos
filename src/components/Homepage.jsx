@@ -5,6 +5,7 @@ import millify from "millify";
 import { Typography, Row, Col, Statistic } from "antd";
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import { Cryptocurrencies, News } from '../components';
 
 // @learning @crucial We destrcu the title from Typography, so instead of
 // <Typography.Title></Typography.Title> we can use <Title></Title>
@@ -13,7 +14,7 @@ const { Title } = Typography;
 
 const Homepage = () => {
     // @learning redux: redux also gives us isFetching
-    const { data, isFetching, error } = useGetCryptosQuery();
+    const { data, isFetching, error } = useGetCryptosQuery(10); // limiting hits to 10
     if (isFetching) return 'Loading...';
 
     // @learning redux: this is how we get data
@@ -44,6 +45,20 @@ const Homepage = () => {
                     <Statistic title="Total Markets" value={millify(globalStats.totalMarkets)} />
                 </Col>
             </Row>
+
+
+            <div className='home-heading-container'>
+                <Title level={2} className='home-title'>Top 10 Cryptocurrencies in the World</Title>
+                <Title level={3} className='show-more'><Link to="/cryptocurrencies">Show more</Link></Title>
+            </div>
+            <Cryptocurrencies simplified={true} />
+
+
+            <div className='home-heading-container'>
+                <Title level={2} className='home-title'>Latest Crypto News</Title>
+                <Title level={3} className='show-more'><Link to="/news">Show more</Link></Title>
+            </div>
+            <News simplified={true} />
         </>
     )
 }
