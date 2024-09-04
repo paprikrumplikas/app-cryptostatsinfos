@@ -1,3 +1,4 @@
+// using coinRanking API
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
@@ -21,7 +22,20 @@ export const cryptoApi = createApi({
             // @crucial @learning this is how we limit the number of hits. We pass count as a param, then see the limit
             query: (count) => createRequest(`/coins?limit=${count}`),    // coins is the actual endpoint we are looking for
             keepUnusedDataFor: 1200, // @crucial @learning Limit API calls for saving money. Cache data for 5 minutes (300 seconds)
-        })
+        }),
+        getPrice: builder.query({
+            // @learning how the url structure looks like and how the param is used in the url can be always found in the API docs
+            // in this case, https://developers.coinranking.com/api/documentation/coins/coin-price-history
+            query: (uuid) => createRequest(`/coin/${uuid}/price`)
+        }),
+        getPriceHistory: builder.query({
+            query: ({ uuid, timePeriod }) => createRequest(`/coin/${uuid}/history?timePeriod=${timePeriod}`)
+        }),
+        getCryptoDetails: builder.query({
+            // @learning how the url structure looks like and how the param is used in the url can be always found in the API docs
+            // in this case, https://developers.coinranking.com/api/documentation/coins/coin-price-history
+            query: (uuid) => createRequest(`/coin/${uuid}`)
+        }),
     })
 });
 
@@ -30,5 +44,5 @@ export const cryptoApi = createApi({
 // redux toolkit creates a hook that we can call to instantly to get all data for the query
 // It also gives loading states, finalize states and everything else needed while making API calls
 export const {
-    useGetCryptosQuery,
+    useGetCryptosQuery, useGetCryptoDetailsQuery, useGetPriceHistoryQuery, useGetPriceQuery,
 } = cryptoApi;

@@ -26,6 +26,9 @@ const News = ({ simplified }) => {
     if (isFetching) return 'Loading...';
     console.log(cryptoNews);
 
+    // @note Handle API request limit error
+    if (error) return <div>Error: MONTHLY quota for Requests on the current plan has been exceeded.</div>;
+
     // @note API was not respecting the limit specified for the number of hits, so use client-side limiting
     const displayedNews = cryptoNews?.items?.slice(0, count) || [];
     console.log("Displayed:", displayedNews);
@@ -45,12 +48,11 @@ const News = ({ simplified }) => {
                         optionFilterProp="children"
                         onChange={(value) => setNewsCategory(value)}
                         filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                        style={{ width: '100%' }} // Set the width to 100% of the parent container
 
                     >
                         <Option value="cryptocurrency"></Option>
-                        {data?.data?.coins.map((coin) =>
-                            <Option value={coin.name}>{coin.name}</Option>)}
+                        {data?.data?.coins.map((i, coin) =>
+                            <Option value={coin.name} key={i}>{coin.name}</Option>)}
                     </Select>
                 </Col>
             )}
