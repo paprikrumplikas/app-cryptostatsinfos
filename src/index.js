@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
+// @crucial
+import { ConfigProvider } from 'antd';
+import { purple } from '@ant-design/colors';
+
 import App from "./App";
 
 // @crucial @learning antd: this single line imporves the desgin tremendously
@@ -19,7 +23,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     // @learning redux: we need to wrap the entire app intp the provider (like with React's context provider) that has the store as prop
     <Router>
         <Provider store={store}>
-            <App />
+            <ConfigProvider theme={{ primary: purple[5] }}>
+                <App />
+            </ConfigProvider>,
         </Provider>
     </Router >
 );

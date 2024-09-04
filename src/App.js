@@ -30,8 +30,8 @@ export const App = () => {
                 </Layout>
                 <div className='footer'>
                     {/** @note the inline styles using CSS */}
-                    <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>
-                        Cryptovererse <br />
+                    <Typography.Title level={5} style={{ color: "#BAC4D0", textAlign: 'center' }}>
+                        Cryptoverse <br />
                         All rights reserved.
                     </Typography.Title>
                     {/** @learning antd: Space is antd's way of saying this is a div, but we add spaces btw the items */}

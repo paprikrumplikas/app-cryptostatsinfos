@@ -8,7 +8,7 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 
 const Cryptocurrencies = ({ simplified }) => {
     // @note in a simplified view we limit display to only 10 hits, otherwise 100
-    const count = simplified ? 10 : 100;
+    const count = simplified ? 12 : 100;
     // @note we are renaming the data to cryptoList
     const { data: cryptosList, isFetching, error } = useGetCryptosQuery(count);
     const [cryptos, setCryptos] = useState([]);
@@ -62,6 +62,7 @@ const Cryptocurrencies = ({ simplified }) => {
                                 title={`${currency.rank}. ${currency.name}`} // built-in props for antd's Card comp, the other 2 as well
                                 extra={<img className='crypto-image' src={currency.iconUrl} />}
                                 hoverable
+                                className='coin-card-custom'
                             >
                                 <p>Price: {millify(currency.price)}</p>
                                 <p>Marketcap: {millify(currency.marketCap)}</p>

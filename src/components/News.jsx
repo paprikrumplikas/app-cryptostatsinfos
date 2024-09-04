@@ -65,7 +65,7 @@ const News = ({ simplified }) => {
                         lg={8}
                         key={i} // @note index of the array we are mapping over
                     >
-                        <Card hoverable className='news-card'>
+                        <Card hoverable className='news-card news-card-custom'>
                             <a href={news.newsUrl} target="_blank" rel="noreferrer">
                                 <div className='news-image-container'>
                                     <Title className='news-title' level={4}>

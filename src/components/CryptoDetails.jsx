@@ -74,65 +74,81 @@ const CryptoDetails = () => {
                 {time.map((date) => <Option key={date}>{date}</Option>)}
             </Select>
 
-            <LineChart
-                coinHistory={coinHistory}
-                currentPrice={millify(cryptoDetails.price)}
-                coinName={cryptoDetails.name}
-            />
+            <div className='extra-margin-y-custom'>
+                <LineChart
+                    coinHistory={coinHistory}
+                    currentPrice={millify(cryptoDetails.price)}
+                    coinName={cryptoDetails.name}
+                />
+            </div>
 
-            <Col className='stats-container'>
+            <Col className='coin-header-container'>
 
-                <Col className='coin-value-statistics'>
-                    <Col className='coin.value-statistics-heading'>
-                        <Title level={3} className='coin-details-headin'>{cryptoDetails.name} value statistics</Title>
-                        <p>An overview showing the stats of {cryptoDetails.name}</p>
-                    </Col>
-                    {stats.map(({ icon, title, value }, i) => (
-                        <Col className='coin-stats' key={i}>
-                            <Col className='coin-stats-name'>
-                                <Text>{icon}</Text>
-                                <Text>{title}</Text>
-                            </Col>
-                            <Text className='stats'>{value}</Text>
+                <div className='extra-margin-top-custom'>
+                    <Col className='coin-value-statistics'>
+                        <Col className='coin.value-statistics-heading'>
+                            <Title level={3} className='coin-details-heading'>{cryptoDetails.name} value statistics</Title>
+                            <p>An overview showing the stats of {cryptoDetails.name}</p>
                         </Col>
-                    ))}
-                </Col>
-
-                <Col className='other-stats-info'>
-                    <Col className='coin.value-statistics-heading'>
-                        <Title level={3} className='coin-details-headin'>Crypto Market Statistics</Title>
-                        <p>Overview of the stats of all cryptocurrencies</p>
-                    </Col>
-                    {genericStats.map(({ icon, title, value }, i) => (
-                        <Col className='coin-stats' key={i}>
-                            <Col className='coin-stats-name'>
-                                <Text>{icon}</Text>
-                                <Text>{title}</Text>
+                        {stats.map(({ icon, title, value }, i) => (
+                            <Col className='coin-stats' key={i}>
+                                <Col className='coin-stats-name'>
+                                    <Text>{icon}</Text>
+                                    <Text>{title}</Text>
+                                </Col>
+                                <Text className='stats'>{value}</Text>
                             </Col>
-                            <Text className='stats'>{value}</Text>
+                        ))}
+                    </Col>
+                </div>
+
+                <div className='extra-margin-top-custom'>
+                    <Col className='other-stats-info'>
+                        <Col className='coin.value-statistics-heading'>
+                            <Title level={3} className='coin-details-heading'>Crypto Market Statistics</Title>
+                            <p>Overview of the stats of all cryptocurrencies</p>
                         </Col>
-                    ))}
-                </Col>
-            </Col>
-            <Col className='coin-desc-link'>
-                <Row className='coin-desc'>
-                    <Title level={3} className='coin-details-heading'>
-                        What is {cryptoDetails.name}?
-                    </Title>
-                    <p>{cryptoDetails.description}</p>
-                </Row>
-                <Col className='coin-links'>
-                    <Title level={3} className='coin-details-heading'>
-                        {cryptoDetails.name} Links
-                    </Title>
-                    {cryptoDetails.links.map((link) =>
-                        <Row className='coin-link' key={link.name}>
-                            <Title level={5} className='link-name'>
-                                {link.type}
+                        {genericStats.map(({ icon, title, value }, i) => (
+                            <Col className='coin-stats' key={i}>
+                                <Col className='coin-stats-name'>
+                                    <Text>{icon}</Text>
+                                    <Text>{title}</Text>
+                                </Col>
+                                <Text className='stats'>{value}</Text>
+                            </Col>
+                        ))}
+                    </Col>
+                </div>
+
+
+                <div className='extra-margin-top-custom'>
+                    <Col className='coin-header-container'>
+                        <Col className='coin-desc'>
+                            <Title level={3} className='coin-details-heading'>
+                                {cryptoDetails.name} Links
                             </Title>
-                            <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
-                        </Row>)}
-                </Col>
+                            {cryptoDetails.links.map((link) =>
+                                <Row className='coin-link' key={link.name}>
+                                    <Title level={5} className='link-name'>
+                                        {link.type}
+                                    </Title>
+                                    <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
+                                </Row>)}
+                        </Col>
+                    </Col>
+                </div>
+
+
+                <div className='extra-margin-top-custom'>
+
+                    <Col className='coin-desc'>
+                        <Title level={3} className='coin-details-heading'>
+                            What is {cryptoDetails.name}?
+                        </Title>
+                        <p>{cryptoDetails.description}</p>
+                    </Col>
+                </div>
+
             </Col>
         </Col >
     )
