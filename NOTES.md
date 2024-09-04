@@ -48,3 +48,12 @@
         2. add to reducer: `[cryptoApi.reducerPath]: cryptoApi.reducer,`
     6. In cryptoApi.js, export the custom hook created automatically by Redux
 
+
+
+
+
+3. Learnings from troubleshootings
+    1. If data logged from an API call is undefined, it is probably becasue the data is still being fetched. 
+    We should prevent the component from mounting before data fetching ends:     `if (isFetching) return 'Loading...';`
+
+

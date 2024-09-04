@@ -2,7 +2,8 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from "antd";
 
-import { Navbar, Homepage, Exchanges, Cryptocurrencies, News, CryptoDetails } from "./components"
+import { Navbar, Homepage, Exchanges, Cryptocurrencies, News, CryptoDetails } from "./components";
+// additional styling
 import "./App.css";
 
 export const App = () => {

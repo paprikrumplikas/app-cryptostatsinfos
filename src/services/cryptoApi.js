@@ -1,4 +1,4 @@
-import { createApi, fecthBaseQuery, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
     // @note this is coming from the options object (from rapid api), these are the headers.
@@ -6,7 +6,7 @@ const cryptoApiHeaders = {
     'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
 }
 
-const baseUrl = "https://coinranking1.p.rapidapi.com/";
+const baseUrl = "https://coinranking1.p.rapidapi.com";
 
 
 // @learning utility func that simply adds the header and url to our calls
@@ -19,7 +19,8 @@ export const cryptoApi = createApi({
     endpoints: (builder) => ({
         getCryptos: builder.query({ // getCryptos is the specific endpoint the data is coming from
             // @crucial @learning this is how we limit the number of hits. We pass count as a param, then see the limit
-            query: (count) => createRequest(`/coins?limit=${count}`)    // coins is the actual endpoint we are looking for
+            query: (count) => createRequest(`/coins?limit=${count}`),    // coins is the actual endpoint we are looking for
+            keepUnusedDataFor: 1200, // @crucial @learning Limit API calls for saving money. Cache data for 5 minutes (300 seconds)
         })
     })
 });

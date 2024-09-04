@@ -304,7 +304,7 @@ a:hover {
 }
 
 .news-card {
-    min-height: 300px !important;
+    min-height: 250px !important;
 }
 
 .news-image-container {
@@ -313,16 +313,19 @@ a:hover {
 }
 
 .news-title {
-    width: 70%;
+    width: 70% !important;
 }
 
-.news-image-container .img {
-    width: 100px;
-    height: 100px;
+/* @crucial @custom there was a . before the img, which hence the selector was incorrectly looking for an element with class img, 
+not the HTML tag <img>. Consequently, this style did not get applied to images and everything was messed up bad.*/
+.news-image-container img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover !important;
 }
 
 .news-card p {
-    color: black;
+    color: black !important;
     margin: 10px 0px !important;
 }
 
