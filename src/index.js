@@ -22,8 +22,21 @@ import store from "./app/store";
 ReactDOM.createRoot(document.getElementById('root')).render(
     // @learning redux: we need to wrap the entire app intp the provider (like with React's context provider) that has the store as prop
     <Router>
+        {/** @crucial @learning redux: allows any component in your application to access and interact with the Redux store using hooks like useSelector and useDispatch, or higher-order components like connect */}
         <Provider store={store}>
-            <ConfigProvider theme={{ primary: purple[5] }}>
+            {/** @crucial @learning antd: this is how default styles can be GLOBALLY overwritten with custom values */}
+            <ConfigProvider
+                theme={{
+                    token: {
+                        colorPrimary: '#333F48', // Using Ant Design's default blue as an example
+                        fontSizeHeading2: 24,
+                        fontSizeHeading3: 18,
+                        colorTextHeading: '#333F48', // Add this line
+                        colorText: '#333F48', // Or any color you prefer
+
+                    },
+                }}
+            >
                 <App />
             </ConfigProvider>,
         </Provider>

@@ -8,8 +8,8 @@ import "./App.css";
 
 export const App = () => {
     return (
-        // @note @crucial the className below are custom CSS classes, these are defined in App.css
-        // these are gonne be used only for the layout and some minor styling changes, the majority of styling is done via antd
+        /*} @note @crucial the className below are custom CSS classes, these are defined in App.css
+        // these are gonne be used only for the layout and some minor styling changes, the majority of styling is done via antd */
         <div className='app'>
             <div className='navbar'>
                 <Navbar />

@@ -57,3 +57,13 @@
     We should prevent the component from mounting before data fetching ends:     `if (isFetching) return 'Loading...';`
 
 
+
+4. STYLING WITH ANTD:
+    1. Antd has default stlyes. These can be overwritten:
+        1. Globally, wrapping the entire app with the ConfigProvider, see index.js (main.js)
+        2. with custom CSS classes, see App.js
+        3. Using the `theme` prop on ConfigProvider for theming
+        4. Inline styling with the `style` prop on Ant Design components, see the Button in ListedTokens.jsx
+        5. CSS-in-JS solutions like styled-components
+
+

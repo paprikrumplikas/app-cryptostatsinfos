@@ -475,3 +475,66 @@ a:hover {
     font-size: 25px !important;
     color: #BAC4D0 !important;
 }
+
+
+.vertical-space {
+    height: 250px;
+}
+
+
+.custom-dark-bg {
+    background-color: #333F48;
+    /* Dark Charcoal for sidebar */
+}
+
+
+
+/* @crucial @learning antd: how styles can be overwritten NOT GLOBALLY but with CSS*/
+.custom-collapse .ant-collapse-item-active>.ant-collapse-content .ant-collapse-content-box {
+    color: #BAC4D0;
+}
+
+
+/* Optional: Adjust styles for better visibility of the dropdown arrow */
+.custom-collapse .ant-collapse-arrow {
+    color: #333F48;
+}
+
+/* Style for inactive collapse item headers background */
+.custom-collapse .ant-collapse-item>.ant-collapse-header {
+    background-color: #333F48 !important;
+}
+
+/* backgorund of active content*/
+.custom-collapse .ant-collapse-item-active>.ant-collapse-content {
+    background-color: #BAC4D0;
+}
+
+
+/* text color in opened / active content */
+.custom-collapse .ant-collapse-item-active>.ant-collapse-content .ant-collapse-content-box * {
+    color: #BAC4D0;
+}
+
+/* active & inactive arrow */
+.custom-collapse .ant-collapse-item .ant-collapse-header {
+    color: #BAC4D0 !important;
+}
+
+/* color of text in the active panel when UPON HOVER
+.custom-collapse .ant-collapse-item-active>.ant-collapse-content .coin-stats:hover * {
+    color: #520404;
+}*/
+
+/* color of text in the active panel when NOT HOVERED*/
+.custom-collapse .ant-collapse-item-active>.ant-collapse-content .coin-stats * {
+    color: #333F48;
+}
+
+.custom-text-color-1 {
+    color: #BAC4D0;
+}
+
+.custom-text-color-2 {
+    color: #333F48 !important;
+}

@@ -55,7 +55,7 @@ const CryptoDetails = () => {
         <Col className='coin-detail-container'>
 
             <Col className='coin-heading-container'>
-                <Title level={2} className='coin-name'>
+                <Title level={2}>
                     {cryptoDetails.name} ({cryptoDetails.symbol}) Price
                 </Title>
                 <p>{cryptoDetails.name} live price in US dollars.
@@ -87,7 +87,7 @@ const CryptoDetails = () => {
                 <div className='extra-margin-top-custom'>
                     <Col className='coin-value-statistics'>
                         <Col className='coin.value-statistics-heading'>
-                            <Title level={3} className='coin-details-heading'>{cryptoDetails.name} value statistics</Title>
+                            <Title level={3}>{cryptoDetails.name} value statistics</Title>
                             <p>An overview showing the stats of {cryptoDetails.name}</p>
                         </Col>
                         {stats.map(({ icon, title, value }, i) => (
@@ -105,7 +105,7 @@ const CryptoDetails = () => {
                 <div className='extra-margin-top-custom'>
                     <Col className='other-stats-info'>
                         <Col className='coin.value-statistics-heading'>
-                            <Title level={3} className='coin-details-heading'>Crypto Market Statistics</Title>
+                            <Title level={3}>Crypto Market Statistics</Title>
                             <p>Overview of the stats of all cryptocurrencies</p>
                         </Col>
                         {genericStats.map(({ icon, title, value }, i) => (
@@ -124,7 +124,7 @@ const CryptoDetails = () => {
                 <div className='extra-margin-top-custom'>
                     <Col className='coin-header-container'>
                         <Col className='coin-desc'>
-                            <Title level={3} className='coin-details-heading'>
+                            <Title level={3}>
                                 {cryptoDetails.name} Links
                             </Title>
                             {cryptoDetails.links.map((link) =>
@@ -142,7 +142,7 @@ const CryptoDetails = () => {
                 <div className='extra-margin-top-custom'>
 
                     <Col className='coin-desc'>
-                        <Title level={3} className='coin-details-heading'>
+                        <Title level={3}>
                             What is {cryptoDetails.name}?
                         </Title>
                         <p>{cryptoDetails.description}</p>

@@ -1,4 +1,5 @@
 // using coinRanking API
+// @crucial need to be added to store.js
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {

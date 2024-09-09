@@ -1,4 +1,5 @@
 // @note API used: Google News (BING news search was not working)
+// @crucial need to be added to store.js
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 

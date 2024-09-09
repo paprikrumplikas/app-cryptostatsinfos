@@ -48,8 +48,8 @@ const Homepage = () => {
 
 
             <div className='home-heading-container'>
-                <Title level={2} className='home-title'>Top 12 Cryptocurrencies in the World</Title>
-                <Title level={3} className='show-more'><Link to="/cryptocurrencies">Show more</Link></Title>
+                <Title level={2}>Top 12 Cryptocurrencies in the World</Title>
+                <Title level={3}><Link to="/cryptocurrencies">Show more</Link></Title>
             </div>
             {/** @note this displays the little cards */}
             <Cryptocurrencies simplified={true} />

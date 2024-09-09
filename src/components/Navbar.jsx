@@ -50,7 +50,7 @@ const Navbar = () => {
                     size="large"
                 />
                 <Typography.Title level={2} className='logo' />
-                <Link to="/" className='custom-menu'>Cryptoverse</Link>
+                <Link to="/" className='custom-menu'>CryptoStats</Link>
 
                 <Button
                     className='menu-control-container'
