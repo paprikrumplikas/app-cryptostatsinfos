@@ -211,8 +211,9 @@ a:hover {
 .news-card-custom {
     border-radius: 20px;
     overflow: hidden;
-    background: linear-gradient(90deg, #006D77, #3A86FF);
-    /* Gradient with teal and vibrant blue */
+    background: linear-gradient(90deg, #EDF4F6, #BAC4D0);
+    height: 320px;
+    /* Add this line */
 }
 
 .stats-container {
